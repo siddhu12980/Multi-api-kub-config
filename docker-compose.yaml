@@ -1,0 +1,22 @@
+version: "3"
+services:
+  auth:
+    build: ./auth-api
+    ports:
+      - "8000:3000"
+    environment:
+      TOKEN_KEY: "shouldbeverysecure"
+  users:
+    build: ./users-api
+    ports:
+      - "3000:3000"
+    environment:
+      MONGODB_CONNECTION_URI: "mongodb+srv://juugi202316701:sidd12345@capi.qqonp.mongodb.net/?retryWrites=true&w=majority"
+      AUTH_API_ADDRESSS: "auth:3000"
+  tasks:
+    build: ./tasks-api
+    ports:
+      - "3200:3000"
+    environment:
+      MONGODB_CONNECTION_URI: "mongodb+srv://juugi202316701:sidd12345@capi.qqonp.mongodb.net/?retryWrites=true&w=majority"
+      AUTH_API_ADDRESS: "auth:3000"
