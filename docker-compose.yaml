@@ -11,12 +11,12 @@ services:
     ports:
       - "3000:3000"
     environment:
-      MONGODB_CONNECTION_URI: "mongodb+srv://juugi202316701:sidd12345@capi.qqonp.mongodb.net/?retryWrites=true&w=majority"
+      MONGODB_CONNECTION_URI: ""
       AUTH_API_ADDRESSS: "auth:3000"
   tasks:
     build: ./tasks-api
     ports:
       - "3200:3000"
     environment:
-      MONGODB_CONNECTION_URI: "mongodb+srv://juugi202316701:sidd12345@capi.qqonp.mongodb.net/?retryWrites=true&w=majority"
+      MONGODB_CONNECTION_URI: ""
       AUTH_API_ADDRESS: "auth:3000"
